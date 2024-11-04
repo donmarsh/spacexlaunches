@@ -1,0 +1,71 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "2d9b59b0c904e97fcf00ea62762ef667",
+    "entities": [
+      {
+        "tableName": "RocketLaunch",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `flightNumber` INTEGER NOT NULL, `missionName` TEXT NOT NULL, `launchDateUTC` TEXT NOT NULL, `details` TEXT, `launchSuccess` INTEGER, `links` TEXT NOT NULL, `launchYear` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flightNumber",
+            "columnName": "flightNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "missionName",
+            "columnName": "missionName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "launchDateUTC",
+            "columnName": "launchDateUTC",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "details",
+            "columnName": "details",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "launchSuccess",
+            "columnName": "launchSuccess",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "links",
+            "columnName": "links",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "launchYear",
+            "columnName": "launchYear",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2d9b59b0c904e97fcf00ea62762ef667')"
+    ]
+  }
+}
