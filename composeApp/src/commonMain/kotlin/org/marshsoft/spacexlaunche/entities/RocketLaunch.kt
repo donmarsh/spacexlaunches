@@ -10,10 +10,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @Entity
-
-data class RocketLaunch(
-    @PrimaryKey(autoGenerate = true)
-    val id:Int,
+data class  RocketLaunch(
+    @PrimaryKey(autoGenerate = false)
+    @SerialName("id")
+    val id:String,
     @SerialName("flight_number")
     val flightNumber: Int,
     @SerialName("name")
@@ -25,7 +25,7 @@ data class RocketLaunch(
     @SerialName("success")
     val launchSuccess: Boolean?,
     @SerialName("links")
-    val links: List<Links>
+    val links: Links
 ) {
     var launchYear = Instant.parse(launchDateUTC).toLocalDateTime(TimeZone.UTC).year
 }

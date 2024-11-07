@@ -7,9 +7,9 @@ import org.marshsoft.spacexlaunche.entities.Links
 
 class Converters {
     @TypeConverter
-    fun fromListLinks(value : List<Links>) = Json.encodeToString(value)
+    fun fromList(value: Links) = Json.encodeToString(value)
 
     @TypeConverter
-    fun toLinksList(value: String) = Json.decodeFromString<List<Links>>(value)
+    fun toLinksList(value: String) = Json.decodeFromString<Links>(value)
 
 }

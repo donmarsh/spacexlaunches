@@ -1,4 +1,4 @@
-package org.marshsoft.spacexlaunche.Network
+package org.marshsoft.spacexlaunche.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
