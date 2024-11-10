@@ -14,11 +14,10 @@ class LaunchViewModel(private val launchRepository: LaunchRepository, private va
     {
         return launchRepository.getLaunches()
     }
-    suspend fun retrieveLaunchesSuspend()
+    private suspend fun retrieveLaunchesSuspend()
     {
 
         val launches = api.getAllLaunches()
-        launchRepository.deleteAll()
         launchRepository.insertAll(launches)
     }
     fun retrieveLaunches()

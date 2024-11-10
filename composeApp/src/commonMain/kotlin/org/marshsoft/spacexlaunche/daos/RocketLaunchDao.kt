@@ -13,7 +13,7 @@ import org.marshsoft.spacexlaunche.entities.RocketLaunch
 interface RocketLaunchDao {
     @Upsert
     suspend fun insert(rocketLaunch: RocketLaunch): Long
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Upsert
     suspend fun insertAll(items: List<RocketLaunch>)
 
     @Query("SELECT * FROM rocketLaunch WHERE id = :id")
